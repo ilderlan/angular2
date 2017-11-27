@@ -1,0 +1,10 @@
+<h2>
+  ig-if works!
+</h2>
+<button (click)="mostrar()">Exibir nome da escola de treinamento</button>
+<p *ngIf="getValor()">Grupo NT</p>
+<p [hidden]="getValor()">Grupo NT2</p>
+<p *ngIf="cursos.length == 0">Não temos cursos disponiveis</p>
+<p *ngIf="cursos.length > 0">Agora Temos cursos cadastrados</p>
+<button (click)="addCurso()">add novo curso</button>
+<p *ngIf="verNome">Validar com vairavel</p>

@@ -6,11 +6,25 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ListaPessoaComponent } from './lista-pessoa/lista-pessoa.component';
 import {AlertaService} from './alerta.service';
+import { InterpolationBindingComponent } from './interpolation-binding/interpolation-binding.component';
+import { PropertyBindingComponent } from './property-binding/property-binding.component';
+import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
+import { IgIfComponent } from './ig-if/ig-if.component';
+import { NgSwitchCaseComponent } from './ng-switch-case/ng-switch-case.component';
+import { NgForComponent } from './ng-for/ng-for.component';
+import { NgClassComponent } from './ng-class/ng-class.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListaPessoaComponent
+    ListaPessoaComponent,
+    InterpolationBindingComponent,
+    PropertyBindingComponent,
+    TwoWayBindingComponent,
+    IgIfComponent,
+    NgSwitchCaseComponent,
+    NgForComponent,
+    NgClassComponent
   ],
   imports: [
     BrowserModule,
