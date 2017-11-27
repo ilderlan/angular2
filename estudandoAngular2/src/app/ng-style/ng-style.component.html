@@ -1,0 +1,13 @@
+<h2>
+  ng-style works!
+</h2>
+<p [style.font-size]="30 + 'px'">Valor fixo na tela</p>
+<p [style.font-size]="valorFonte">Atributo da ckasse componente sendo referenciado no template</p>
+<button (click)="incrementar()">Aumentar tamanho</button>
+<p [style.font-size]="validaFonte ? 'x-large' : 'smaller'" [style.color]="validaCor ? 'red' : 'blue'">Mudar valor com dondição ternária</p>
+<button (click)="mudarFonte()">Mudar fonte</button>
+<button (click)="mudarCor()">Mudar cor</button>
+<p [ngStyle]="{'font-size':'30px'}">Valor fixo na tela</p>
+<p [ngStyle]="{'font-size': valorFonte}">Variavel da classe componente sendo referenciado no template [ngStyle]</p>
+<p [ngStyle]="{'font-size': validaFonte ? 'x-large' : 'smaller',
+                'color': validaCor ? 'red' : 'blue'}">Mudar valor com condição ternária [ngStyle]</p>
