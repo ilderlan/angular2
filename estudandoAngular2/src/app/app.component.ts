@@ -9,10 +9,16 @@ import {AlertaService} from './alerta.service';
 export class AppComponent {
   title:String = 'Dia de estudos!';
   foto:String = 'favicon.ico';
+  desenvolvimento:string [] = ['Angular 2', 'JavaScript', 'TypeScript', 'HTML', 'CSS'];
+  valor:string;
 
   constructor(private service:AlertaService){}
 
   enviarMsg():void{
     this.service.msAlerta();
+  }
+
+  valorPassado(valor):void {
+    this.valor = valor;
   }
 }
