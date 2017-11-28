@@ -1,0 +1,17 @@
+<h2>
+  event-binding works!
+</h2>
+<button (click)="meuClick()">Clique aqui</button>
+<input type="text" (keyup)="digitou($event)">
+<input type="text" #valorInput (keyup)="digitouVarTemplate(valorInput.value)">
+<br/>
+<input type="password" #qtdSenha (keyup)="validaSenha(qtdSenha.value)">
+<button [disabled]="!habilitarBotao" (click)="gravarSenha(qtdSenha.value)">Gravar</button>
+<h3>Evento keyup.enter adiciona na lista</h3>
+<input type="text" #conteudo (keyup.enter)="adicionar(conteudo.value); conteudo.value=''">
+<ul>
+  <li *ngFor="let item of valores">{{item}}</li>
+</ul>
+<h3>Evento blur</h3>
+<input type="text" #data (blur)="verIdade(data.value)">
+<p>Você tem tem: {{idade}} anos de idade</p>
