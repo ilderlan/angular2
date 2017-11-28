@@ -1,0 +1,64 @@
+<h3 class="container col-6">
+  Dados do contato
+</h3>
+
+<div class="card container col-6">
+  <form class="card-block" (ngSubmit)="enviarDados()" *ngIf="!enviado" #formulario="ngForm">
+
+    <div class="form-group" [class.has-success]='nome.valid' [class.has-danger]="nome.invalid">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" #nome="ngModel" [class.form.control-sucess]="nome.valid" [(ngModel)]="_nome" placeholder="digite o nome" required>
+      <div [hidden]="nome.valid || nome.pristine">
+        <small [ngClass]="{'form-control-danger':'nome.invalid || nome.drity', 'form-control-feedback': 'nome.invalid || nome.drity'}">
+          O nome é um campo obrigatório
+        </small>
+      </div>
+    </div>
+
+    <div class="form-group" [class.has-success]='telefone.valid' [class.has-danger]="telefone.invalid">
+      <label for="telefone">Telefone</label>
+      <input type="text" id="telefone" name="telefone" #telefone="ngModel" [class.form.control-sucess]="telefone.valid" [(ngModel)]="_telefone" placeholder="digite o telefone" required>
+      <div [hidden]="telefone.valid || telefone.pristine">
+        <small [ngClass]="{'form-control-danger':'telefone.invalid || telefone.drity', 'form-control-feedback': 'telefone.invalid || telefone.drity'}">
+          O nome é um campo obrigatório
+        </small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input class="form-control" type="text" id="email" [(ngModel)]="_email" #email="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="tipo">Tipo</label>
+      <select id="tipo" [(ngModel)]="_tipo" name="tipo" #tipo="ngModel">
+        <option class="form-control" *ngFor="let item of tipos" [value]="item">{{item}}</option>
+      </select>
+    </div>
+
+    <button class="btn" type="submit" [disabled]="formulario.invalid">Cadastro</button>
+  </form>
+</div>
+
+<div class="card card-block container col-6" *ngIf="enviado">
+  <div> 
+    <h2>Dados do contato enviado!</h2>
+  </div>
+
+  <div> 
+    <p>Nome do contato: <strong>{{_nome}}</strong></p>
+  </div>
+
+  <div> 
+    <p>Telefone do contato: <strong>{{_telefone}}</strong></p>
+  </div>
+
+  <div> 
+    <p>E-mail do contato: <strong>{{_email}}</strong></p>
+  </div>
+
+  <div> 
+    <p>Tipo do contato: <strong>{{_tipo}}</strong></p>
+  </div>
+</div>
