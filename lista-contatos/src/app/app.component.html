@@ -1,3 +1,24 @@
-<h1>
-  {{title}}
-</h1>
+<div class="jumbotron">
+    <h1>
+        {{title}}
+    </h1>
+
+    <br>
+    <br>
+
+    <app-dados-usuario></app-dados-usuario>
+
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="col">
+            <app-lista-usuario (idClicado)="enviarDetalhe($event)"></app-lista-usuario>
+        </div>
+
+        <div class="col">
+            <app-detalhes-usuario [contato]="contatoclicado"></app-detalhes-usuario>
+        </div>
+
+    </div>
+</div>

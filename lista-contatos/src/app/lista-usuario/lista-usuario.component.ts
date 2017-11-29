@@ -10,13 +10,13 @@ import {ContatosDataBaseService} from '../servicos/contatos-data-base.service';
 })
 export class ListaUsuarioComponent implements OnInit {
 
-  listaContatos:ContatoModel[] = [];
+  listaDeContatos:ContatoModel[] = [];
   @Output() idClicado = new EventEmitter();
 
   constructor(private dataBaseService:ContatosDataBaseService) { }
 
   ngOnInit() {
-    this.dataBaseService.enviarContato.subscribe(contatos => this.listaContatos = contatos);
+    this.dataBaseService.enviarContato.subscribe(contatos => this.listaDeContatos = contatos);
   }
 
   contatoClicado(item:number):void {
